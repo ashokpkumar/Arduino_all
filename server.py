@@ -12,7 +12,7 @@ sock.bind(server_address)
 
 # Listen for incoming connections
 sock.listen(1)
-
+f = open('binfileName','rb')
 while True:
     # Wait for a connection
     print >>sys.stderr, 'waiting for a connection'
@@ -26,7 +26,10 @@ while True:
             print >>sys.stderr, 'received "%s"' % data
             if data:
                 print >>sys.stderr, 'sending data back to the client'
+                data = f.read()
+                print >>sys.stderr, 'Sending this data', data
                 connection.sendall(data)
+                #connection.sendall(data)
             else:
                 print >>sys.stderr, 'no more data from', client_address
                 break
