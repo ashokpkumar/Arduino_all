@@ -14,7 +14,7 @@ sock.bind(server_address)
 sock.listen(1)
 f = open('binfileName','rb')
 while True:
-    # Wait for a connection
+    
     print >>sys.stderr, 'waiting for a connection'
     connection, client_address = sock.accept()
     try:
