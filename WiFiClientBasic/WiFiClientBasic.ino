@@ -15,7 +15,7 @@
 const char* ssid     = STASSID;
 const char* password = STAPSK;
 
-const char* host = "192.168.1.6";
+const char* host = "192.168.1.4";
 const uint16_t port = 3000;
 
 ESP8266WiFiMulti WiFiMulti;
@@ -60,9 +60,12 @@ void loop() {
     delay(5000);
     return;
   }
-
+  const char* host = "http://192.168.1.4:3000/get_firmware_update/ashok/kumar";
   // This will send the request to the server
-  client.println("hello from ESP8266");
+  //client.println("hello from ESP8266");
+  Serial.println(host);
+  Serial.println("[Sending a request]");
+  client.print(String("GET /") + " HTTP/1.1\r\n" + "Host: " + host + "\r\n" + "Connection: close\r\n" + "\r\n");
 
   //read back one line from server
   Serial.println("receiving from remote server");
