@@ -6,7 +6,7 @@ import sys
 sock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
 
 # Bind the socket to the port
-server_address = ('192.168.1.3', 3000)
+server_address = ('192.168.1.6', 3000)
 print >>sys.stderr, 'starting up on %s port %s' % server_address
 sock.bind(server_address)
 
@@ -26,7 +26,7 @@ while True:
             print >>sys.stderr, 'received "%s"' % data
             if data:
                 print >>sys.stderr, 'sending data back to the client'
-                data = f.read()
+                data = f.read(8000)
                 print >>sys.stderr, 'Sending this data', data
                 connection.sendall(data)
                 #connection.sendall(data)
