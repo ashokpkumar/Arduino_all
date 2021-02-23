@@ -9,13 +9,17 @@ def hello():
     print "hello world"
     return 'Hello World!'
 
-@app.route('/get_firmware_update/<gatewayserial>/<firmwareversion>')
-def updatefirmware(gatewayserial,firmwareversion):
-    f = open('binfileName','rb')
-    data = f.read(8000)
-    print ">>>>>>>>>>>>>>>>>>>", gatewayserial
-    print "*******************", firmwareversion
-    return data
+@app.route('/get_firmware_update/<gatewayserial>/<firmwareversion><message>')
+def updatefirmware(gatewayserial,firmwareversion,message):
+    print "Message type :>>>>>>>>>>>>>>",message
+    if message =="firmwareupdate":    
+        f = open('binfileName','rb')
+        data = f.read()
+        print ">>>>>>>>>>>>>>>>>>>", gatewayserial
+        print "*******************", firmwareversion
+        return data
+    else:
+        return "No action available for this message type. Available message types are :" + "firmwareupdate"
     
 
 if __name__ == '__main__':
