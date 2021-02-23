@@ -8,9 +8,10 @@ String host_port_name = "http://192.168.1.5:3000";
 //Endpoint Format
 //String endpoint = "/get_firmware_update/<gatewayserialnumber>/<firmwareversion>/<message>";
 
-String endpoint = "/get_firmware_update/at-at212/1.2/firmwareupdate";
-//String endpoint = "/get_firmware_update/unavailable/1.5/firmwareupdate";
-//String endpoint = "/get_firmware_update/at-at212/1.5/firmwareupdate";
+String endpoint = "/get_firmware_update/at-at212/1.2/firmwareupdate"; //All pass
+//String endpoint = "/get_firmware_update/unavailable/1.5/firmwareupdate"; //device is unavailable
+//String endpoint = "/get_firmware_update/at-at212/1.5/firmwareupdate"; //device available firmware up to date
+//String endpoint = "/get_firmware_update/at-at212/1.5/sample"; //Message type not found
 
 void setup() {
   Serial.begin(115200);
@@ -62,6 +63,7 @@ void loop() {
       }
     } else {
       Serial.printf("[HTTP] GET... failed, error: %s\n", http.errorToString(httpCode).c_str());
+      
     }
     http.end();
   }
