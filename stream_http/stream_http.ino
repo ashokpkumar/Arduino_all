@@ -4,7 +4,8 @@
 #include <ESP8266HTTPClient.h>
 
 ESP8266WiFiMulti WiFiMulti;
-String host_port_name = "http://192.168.1.5:3000";
+//String host_port_name = "http://192.168.1.5:3000";
+String host_port_name = "http://192.168.1.5:8080/devices";
 //Endpoint Format
 //String endpoint = "/get_firmware_update/<gatewayserialnumber>/<firmwareversion>/<message>";
 
