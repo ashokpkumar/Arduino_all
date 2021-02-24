@@ -54,4 +54,11 @@ https://stackoverflow.com/questions/61483877/flask-socketio-arduino-esp
 https://www.instructables.com/ESP8266-WiFi-File-Management/
 https://pymotw.com/2/socket/tcp.html
 
+For HTTPS request:
+https://stackoverflow.com/questions/55325731/how-to-read-data-from-websites-on-particle
+https://en.wikipedia.org/wiki/List_of_TCP_and_UDP_port_numbers
+https://www.grc.com/fingerprints.htm#:~:text=Click%20the%20%E2%80%9CSecurity%E2%80%9D%20icon%2F,is%20shown%20under%20%E2%80%9CFingerprints%E2%80%9D.
+
+
+
 

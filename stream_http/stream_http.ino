@@ -5,11 +5,12 @@
 
 ESP8266WiFiMulti WiFiMulti;
 //String host_port_name = "http://192.168.1.5:3000";
-String host_port_name = "http://192.168.1.5:8080/devices";
 //Endpoint Format
 //String endpoint = "/get_firmware_update/<gatewayserialnumber>/<firmwareversion>/<message>";
 
+String host_port_name = "http://pivar-staging.appspot.com/devices";
 String endpoint = "/get_firmware_update/at-at212/1.2/firmwareupdate"; //All pass
+
 //String endpoint = "/get_firmware_update/unavailable/1.5/firmwareupdate"; //device is unavailable
 //String endpoint = "/get_firmware_update/at-at212/1.5/firmwareupdate"; //device available firmware up to date
 //String endpoint = "/get_firmware_update/at-at212/1.5/sample"; //Message type not found
